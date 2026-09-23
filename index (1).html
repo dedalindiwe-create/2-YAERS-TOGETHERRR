@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Anniversary Website</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #fce4ec, #e1bee7, #bbdefb);
+      color: #444;
+    }
+
+    #lockscreen {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.8);
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+      border: 2px solid #888;
+      border-radius: 6px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      background: #ba68c8;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 4px;
+    }
+
+    button:hover {
+      background: #9c27b0;
+    }
+
+    section {
+      min-height: 100vh;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    section.active {
+      display: flex;
+    }
+
+    h1 {
+      color: #6a1b9a;
+    }
+
+    .nav-buttons {
+      margin-top: 20px;
+    }
+
+    #playlist {
+      background: url('headphones.png') no-repeat center center;
+      background-size: cover;
+    }
+
+    .media {
+      width: min(560px, 95vw);
+      height: auto;
+      border-radius: 12px;
+      margin: 10px 0;
+    }
+
+    .photo {
+      width: min(1000px, 95vw);
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+
+    .youtube {
+      width: min(560px, 95vw);
+      height: 315px;
+      max-width: 100%;
+      margin: 10px 0;
+      border-radius: 10px;
+    }
+
+    .map {
+      width: min(600px, 95vw);
+      height: 450px;
+      max-width: 100%;
+      border-radius: 12px;
+    }
+
+    @media (max-width: 600px) {
+      section {
+        padding: 30px 10px;
+      }
+
+      .youtube {
+        height: 230px;
+      }
+
+      .map {
+        height: 350px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PIN Lock Screen -->
+  <div id="lockscreen">
+    <h1>Enter PIN to Access 💕</h1>
+    <input type="password" id="pinInput" placeholder="Enter PIN">
+    <button onclick="checkPin()">Unlock</button>
+    <p id="error" style="color:red;"></p>
+  </div>
+
+  <!-- Page 1 – Anniversary Message -->
+  <section>
+    <h1>Happy 2nd Anniversary Baby 💖</h1>
+    <p>Forever us, no matter the distance ✨</p>
+
+    <div class="nav-buttons">
+      <button onclick="nextPage()">Next ➡️</button>
+    </div>
+  </section>
+
+  <!-- Page 2 – Love Letter -->
+  <section>
+    <h1>Our Love Letter</h1>
+    <p>
+      My Love,<br><br>
+      Our story has never been simple... but it has always been ours.<br><br>
+      xoxo<br>
+      Your Baby
+    </p>
+
+    <div class="nav-buttons">
+      <button onclick="prevPage()">⬅️ Back</button>
+      <button onclick="homePage()">🏠 Home</button>
+      <button onclick="nextPage()">Next ➡️</button>
+    </div>
+  </section>
+
+  <!-- Page 3 – Movie Memory / Photo -->
+  <section>
+    <h1>Our Movie Trail 🎬💕</h1>
+
+    <img src="movie.jpg" alt="Our Movie Trail" class="photo">
+
+    <p>Different stories, same vibes, best time with you ❤️</p>
+
+    <div class="nav-buttons">
+      <button onclick="prevPage()">⬅️ Back</button>
+      <button onclick="homePage()">🏠 Home</button>
+      <button onclick="nextPage()">Next ➡️</button>
+    </div>
+  </section>
+
+  <!-- Page 4 – Playlist -->
+  <section id="playlist">
+    <h1>Our Playlist 🎧</h1>
+
+    <!-- Song 1 -->
+    <iframe class="youtube"
+      src="https://www.youtube.com/embed/91NdmjzYygE?si=CM29FKpqwx8RYf71"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
+    </iframe>
+
+    <!-- Song 2 -->
+    <iframe class="youtube"
+      src="https://www.youtube.com/embed/NZQRFDGR3o0?si=nA89K620A7xVMDYK"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
+    </iframe>
+
+    <!-- Song 3 -->
+    <iframe class="youtube"
+      src="https://www.youtube.com/embed/lNK-mfn31Aw?si=oDbAS6Nt6AJUsi_u"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
+    </iframe>
+
+    <!-- Song 4 -->
+    <iframe class="youtube"
+      src="https://www.youtube.com/embed/YuUfWMjCG4o?si=Ai3Dm8QvDXVouGQZ"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
+    </iframe>
+
+    <div class="nav-buttons">
+      <button onclick="prevPage()">⬅️ Back</button>
+      <button onclick="homePage()">🏠 Home</button>
+      <button onclick="nextPage()">Next ➡️</button>
+    </div>
+  </section>
+
+  <!-- Page 5 – First Video -->
+  <section>
+    <h1>Our Countdown 🎬💕</h1>
+
+    <video class="media" controls>
+      <source src="5,4,3,2,1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="nav-buttons">
+      <button onclick="prevPage()">⬅️ Back</button>
+      <button onclick="homePage()">🏠 Home</button>
+      <button onclick="nextPage()">Next ➡️</button>
+    </div>
+  </section>
+
+  <!-- Page 6 – Second Video -->
+  <section>
+    <h1>Our Anniversary Video 💕</h1>
+
+    <video class="media" controls>
+      <source src="anniversary.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="nav-buttons">
+      <button onclick="prevPage()">⬅️ Back</button>
+      <button onclick="homePage()">🏠 Home</button>
+      <button onclick="nextPage()">Next ➡️</button>
+    </div>
+  </section>
+
+  <!-- Page 7 – Distance Map -->
+  <section>
+    <h1>Our Distance Map 💕</h1>
+
+    <iframe
+      class="map"
+      src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d3625954.684195228!2d24.578144049698572!3d-27.439002931865723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!3e6!4m4!2zMjnCsDEwJzQzLjciUyAyNsKwMTYnMjkuOCJF!3m2!1d-29.1788056!2d26.2749444!4m5!1s0x1e9563555d406939%3A0x77570ab8f7962788!2sHimalaya%20towers%2C%20544%20WF%20Nkomo%20St%2C%20Pretoria%20West%2C%20Pretoria%2C%200183!3m2!1d-25.749263!2d28.1505172!5e0!3m2!1sen!2sza!4v1790115159407!5m2!1sen!2sza"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="strict-origin-when-cross-origin">
+    </iframe>
+
+    <p>No matter the miles, our hearts stay close 💕</p>
+
+    <div class="nav-buttons">
+      <button onclick="prevPage()">⬅️ Back</button>
+      <button onclick="homePage()">🏠 Home</button>
+    </div>
+  </section>
+
+  <script>
+    let currentPage = 0;
+    const pages = document.querySelectorAll("section");
+
+    function showPage(index) {
+      pages.forEach((page, i) => {
+        page.classList.toggle("active", i === index);
+      });
+    }
+
+    function nextPage() {
+      if (currentPage < pages.length - 1) {
+        currentPage++;
+        showPage(currentPage);
+      }
+    }
+
+    function prevPage() {
+      if (currentPage > 0) {
+        currentPage--;
+        showPage(currentPage);
+      }
+    }
+
+    function homePage() {
+      currentPage = 0;
+      showPage(currentPage);
+    }
+
+    function checkPin() {
+      const pin = document.getElementById("pinInput").value;
+
+      if (pin === "240924") {
+        document.getElementById("lockscreen").style.display = "none";
+        showPage(0);
+      } else {
+        document.getElementById("error").innerText =
+          "Incorrect PIN. Try again.";
+      }
+    }
+
+    // Pressing Enter in the PIN box also unlocks the website.
+    document.getElementById("pinInput").addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        checkPin();
+      }
+    });
+  </script>
+
+</body>
+</html>
